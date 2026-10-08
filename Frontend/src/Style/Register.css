@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.main_container {
+  --ink: #e8eaf5;
+  --muted: #a6aec3;
+  --primary: #796de8;
+  --primary-dark: #6458d1;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(103, 86, 217, 0.24), transparent 30%),
+    radial-gradient(circle at 90% 88%, rgba(47, 145, 131, 0.14), transparent 28%),
+    #111321;
+}
+
+.card-section {
+  width: min(100%, 460px);
+  overflow: hidden;
+  border: 1px solid #363a52;
+  border-radius: 22px;
+  background: rgba(28, 31, 48, 0.96);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+}
+
+.Name-section {
+  position: relative;
+  padding: 32px 40px 28px;
+  color: #fff;
+  background: linear-gradient(125deg, #332b7f, #6255ce 70%, #786be0);
+}
+
+.Name-section::after {
+  position: absolute;
+  right: -28px;
+  bottom: -52px;
+  width: 145px;
+  height: 145px;
+  border: 20px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  content: '';
+}
+
+.Name-section p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: Outfit, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.user-details-section {
+  padding: 32px 40px 38px;
+}
+
+.user-details-section form {
+  display: grid;
+  gap: 21px;
+}
+
+.username-div,
+.email-div,
+.password-div {
+  display: grid;
+  gap: 8px;
+}
+
+.user-details-section label {
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.user-details-section input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #3b4058;
+  border-radius: 10px;
+  outline: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.96rem;
+  background: #25293b;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.user-details-section input:hover {
+  border-color: #535976;
+}
+
+.user-details-section input:focus {
+  border-color: var(--primary);
+  background: #292e43;
+  box-shadow: 0 0 0 4px rgba(121, 109, 232, 0.18);
+}
+
+.user-details-section button {
+  min-height: 50px;
+  margin-top: 5px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font: 700 0.95rem 'DM Sans', sans-serif;
+  letter-spacing: 0.025em;
+  background: linear-gradient(105deg, var(--primary), #978cff);
+  box-shadow: 0 10px 18px rgba(91, 76, 199, 0.28);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.user-details-section button:hover {
+  background: linear-gradient(105deg, var(--primary-dark), #7b6fea);
+  box-shadow: 0 13px 22px rgba(91, 76, 199, 0.34);
+  transform: translateY(-2px);
+}
+
+.user-details-section button:active {
+  box-shadow: 0 6px 12px rgba(90, 75, 231, 0.23);
+  transform: translateY(0);
+}
+
+.user-details-section button:focus-visible {
+  outline: 3px solid rgba(146, 135, 255, 0.42);
+  outline-offset: 3px;
+}
+
+.auth-switch {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.auth-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-link:hover,
+.auth-link:focus-visible {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .main_container {
+    padding: 20px 14px;
+  }
+
+  .Name-section,
+  .user-details-section {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .Name-section p {
+    font-size: 1.45rem;
+  }
+}

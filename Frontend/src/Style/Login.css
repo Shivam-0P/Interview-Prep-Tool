@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+.login-container {
+	--ink: #e8eaf5;
+	--muted: #a6aec3;
+	--primary: #796de8;
+	--primary-dark: #6458d1;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 32px 20px;
+	font-family: 'DM Sans', sans-serif;
+	background:
+		radial-gradient(circle at 14% 12%, rgba(103, 86, 217, 0.23), transparent 26%),
+		radial-gradient(circle at 88% 84%, rgba(47, 145, 131, 0.14), transparent 24%),
+		#111321;
+}
+
+.login-card-container {
+	width: min(100%, 440px);
+	overflow: hidden;
+	border: 1px solid #363a52;
+	border-radius: 24px;
+	background: rgba(28, 31, 48, 0.96);
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.34);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+
+.login-name {
+	position: relative;
+	padding: 34px 40px 30px;
+	color: #fff;
+	background: linear-gradient(125deg, #332b7f, #6255ce 70%, #786be0);
+}
+
+.login-name::after {
+	position: absolute;
+	right: -36px;
+	bottom: -54px;
+	width: 150px;
+	height: 150px;
+	border: 20px solid rgba(255, 255, 255, 0.12);
+	border-radius: 50%;
+	content: '';
+}
+
+.login-para {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	font-family: 'Outfit', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+}
+
+.Login-form {
+	display: grid;
+	gap: 20px;
+	padding: 32px 40px 38px;
+}
+
+.login-email,
+.login-password {
+	display: grid;
+	gap: 8px;
+}
+
+.Login-form label {
+	color: var(--ink);
+	font-size: 0.76rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.Login-form input {
+	width: 100%;
+	min-height: 48px;
+	padding: 0 14px;
+	border: 1px solid #3b4058;
+	border-radius: 10px;
+	outline: none;
+	color: var(--ink);
+	font: inherit;
+	font-size: 0.96rem;
+	background: #25293b;
+	transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.Login-form input:hover {
+	border-color: #535976;
+}
+
+.Login-form input:focus {
+	border-color: var(--primary);
+	background: #292e43;
+	box-shadow: 0 0 0 4px rgba(121, 109, 232, 0.18);
+}
+
+.Login-form input::placeholder {
+	color: #828aa1;
+}
+
+.Login-form button {
+	min-height: 50px;
+	margin-top: 4px;
+	border: 0;
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	color: #fff;
+	font: 700 0.95rem 'DM Sans', sans-serif;
+	letter-spacing: 0.025em;
+	background: linear-gradient(105deg, var(--primary), #978cff);
+	box-shadow: 0 10px 18px rgba(91, 76, 199, 0.28);
+	transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.Login-form button:hover {
+	background: linear-gradient(105deg, var(--primary-dark), #7b6fea);
+	box-shadow: 0 13px 22px rgba(91, 76, 199, 0.34);
+	transform: translateY(-2px);
+}
+
+.Login-form button:active {
+	box-shadow: 0 6px 12px rgba(90, 75, 231, 0.23);
+	transform: translateY(0);
+}
+
+.Login-form button:disabled {
+	cursor: wait;
+	opacity: 0.82;
+	transform: none;
+}
+
+.button-spinner {
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: login-spin 700ms linear infinite;
+}
+
+@keyframes login-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.Login-form button:focus-visible {
+	outline: 3px solid rgba(146, 135, 255, 0.42);
+	outline-offset: 3px;
+}
+
+.auth-switch {
+	margin: -2px 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	justify-content: center;
+	color: var(--muted);
+	font-size: 0.95rem;
+}
+
+.auth-link {
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--primary);
+	cursor: pointer;
+	font: inherit;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.auth-link:hover,
+.auth-link:focus-visible {
+	color: var(--primary-dark);
+	text-decoration: underline;
+	outline: none;
+}
+
+@media (max-width: 480px) {
+	.login-container {
+		padding: 20px 14px;
+	}
+
+	.login-name,
+	.Login-form {
+		padding-right: 24px;
+		padding-left: 24px;
+	}
+
+	.login-para {
+		font-size: 1.45rem;
+	}
+}
